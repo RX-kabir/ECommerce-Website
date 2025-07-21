@@ -1,0 +1,41 @@
+﻿@model List<Cart>
+
+<div class="container-fluid px-4">
+    <h2 class="mt-4 text-center text-uppercase" style="letter-spacing:4px">Cart Details</h2>
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table table-bordered table-striped text-center mt-3">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Customer Name</th>
+                        <th>Product Quantity</th>
+                        <th>Status</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cart in Model)
+                    {
+                        <tr>
+                            <td>@cart.products.product_name</td>
+                            <td>@cart.customers.customer_name</td>
+                            <td>@cart.product_quantity</td>
+                            <td>@cart.cart_status</td>
+                            <td>
+                                <a href="@Url.Action("updateCart", "Admin", new { id = cart.cart_id })" class="btn btn-warning btn-sm me-2">
+                                    <i class="fas fa-edit"></i> Update
+                                </a>
+                                <a href="@Url.Action("deletePermissionCart", "Admin", new { id = cart.cart_id })" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

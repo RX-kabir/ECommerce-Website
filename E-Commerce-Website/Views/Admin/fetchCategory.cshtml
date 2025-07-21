@@ -1,0 +1,53 @@
+﻿@model List<Category>
+
+<div class="container-fluid px-4">
+    <h2 class="mt-4 text-center text-uppercase text-primary" style="letter-spacing: 4px;">
+        All Categories
+    </h2>
+
+    <div class="d-flex justify-content-end my-3">
+        <a href="@Url.Action("addCategory", "Admin")" class="btn btn-success">
+            <i class="fas fa-plus"></i> Add New Category
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <table class="table table-bordered table-hover text-center mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th style="width: 15%;">Category ID</th>
+                        <th>Category Name</th>
+                        <th style="width: 25%;">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        foreach (var cat in Model)
+                        {
+                            <tr>
+                                <td>@cat.category_id</td>
+                                <td>@cat.category_name</td>
+                                <td>
+                                    <a href="@Url.Action("updateCategory", "Admin", new { id = cat.category_id })" class="btn btn-warning btn-sm me-2">
+                                        <i class="fas fa-edit"></i> Update
+                                    </a>
+                                    <a href="@Url.Action("deletePermissionCategory", "Admin", new { id = cat.category_id })" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3" class="text-muted">No categories available.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

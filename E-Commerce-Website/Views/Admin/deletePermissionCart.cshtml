@@ -1,0 +1,33 @@
+﻿@model Cart
+
+<div class="container-fluid px-4">
+    <h2 class="mt-4 mb-4 text-center text-uppercase text-danger" style="letter-spacing: 4px;">
+        Are You Sure You Want to Delete This Cart?
+    </h2>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-danger mb-4">
+            <div class="card-header bg-danger text-white text-center">
+                <h5 class="mb-0">Cart Details</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>ID:</strong> @Model.cart_id<li>
+                    <li class="list-group-item"><strong>Product Name:</strong> @Model.product_id</li>
+                    <li class="list-group-item"><strong>Customer Name:</strong> @Model.cust_id</li>
+                    <li class="list-group-item"><strong>Product Quantity:</strong> @Model.product_quantity</li>
+                    <li class="list-group-item"><strong>Cart Status:</strong> @Model.cart_status</li>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <a href="@Url.Action("deleteCart", "Admin", new { id = Model.cart_id })" class="btn btn-danger px-4">
+                    <i class="fas fa-trash-alt"></i> Confirm Delete
+                </a>
+                <a href="@Url.Action("fetchCart", "Admin")" class="btn btn-secondary px-4">
+                    <i class="fas fa-arrow-left"></i> Cancel
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

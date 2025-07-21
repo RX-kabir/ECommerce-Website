@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "productDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Product>
+
+<div class="container mt-4">
+    <h1 class="text-center mb-5">Product Details</h1>
+
+    @foreach (var pro in Model)
+    {
+        <div class="row mb-5 p-4 shadow rounded" style="background-color: #fff;">
+            <!-- Product Image -->
+            <div class="col-md-6 text-center">
+                <img src="@("~/product_images/" + pro.product_image)"
+                     asp-append-version="true"
+                     style="max-height: 400px; width: auto; max-width: 75%; border-radius: 10px;"
+                     alt="Product Image" />
+            </div>
+
+            <!-- Product Info -->
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h2 class="mb-3" style="color: #2c3e50;">@pro.product_name</h2>
+                <h4 class="text-danger mb-3">৳@pro.product_price</h4>
+                <p style="font-size: 16px; line-height: 1.6; color: #555;">@pro.product_description</p>
+
+                <div class="mt-4">
+                    <a href="#" class="btn btn-warning btn-lg me-3" style="min-width: 150px;">
+                        🛒 Add to Cart
+                    </a>
+                    <a href="#" class="btn btn-success btn-lg" style="min-width: 150px;">
+                        Buy Now
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>

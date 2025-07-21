@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "fetchAllProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-3">
+<h3>All Products</h3>
+<div class="allproduct mt-3 d-flex justify-content-between">
+    @Html.Partial("fetchProducts", ViewData["product"])
+</div>
+
+@if(TempData["message"]!=null){
+        <h4 class="text-success">@TempData["message"]</h4>
+}
+</div>

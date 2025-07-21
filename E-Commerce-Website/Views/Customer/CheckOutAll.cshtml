@@ -1,0 +1,20 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "CheckOutAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mt-5 text-center">
+    <h2 class="text-success mb-4">Thank You for Your Order!</h2>
+    <p>Your order has been placed successfully.</p>
+
+    <h4>Order Summary:</h4>
+    <p><strong>Order ID:</strong> @Model.order_id</p>
+    <p><strong>Order Date:</strong> @Model.order_date.ToString("MMMM dd, yyyy HH:mm")</p>
+    <p><strong>Total Price:</strong> @Model.total_price.ToString("C")</p>
+
+    <a href="@Url.Action("Index", "Home")" class="btn btn-primary mt-3">Continue Shopping</a>
+</div>
+
+

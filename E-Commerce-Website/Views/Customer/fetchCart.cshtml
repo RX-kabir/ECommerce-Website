@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "fetchCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Cart>
+
+<div class="container mt-4">
+    <h2 class="text-center text-uppercase mb-4" style="letter-spacing:2px;">Your Cart</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <table class="table table-bordered table-striped shadow text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Cart ID</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Product Price</th>
+                        <th>Option</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        decimal total = 0;
+                        foreach (var cart in Model)
+                        {
+                            var itemTotal = decimal.Parse(cart.products.product_price) * cart.product_quantity;
+                            total += itemTotal;
+
+                            <tr>
+                                <td>@cart.cart_id</td>
+                                <td>@cart.products.product_name</td>
+                                <td>@cart.product_quantity</td>
+                                <td>@cart.products.product_price</td>
+                                <td>
+                                    <a href="@Url.Action("removeProduct","Customer",new {id = cart.cart_id})" class="btn btn-warning">Remove</a>
+                                </td>
+                            </tr>
+                        }
+                        <tr class="table-info fw-bold">
+                            <td colspan="3" class="text-end">Total Price:</td>
+                            <td>@total.ToString("0.00")</td>
+                            <td></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" class="text-muted">Your cart is empty.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @* Checkout button below table *@
+            @if (Model != null && Model.Count > 0)
+            {
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="@Url.Action("CheckOutAll", "Customer")" class="btn btn-success">Checkout</a>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@model List<Product>
+
+@foreach (var pro in Model)
+{
+    <div class="product" style="
+        margin: 20px;
+        width: 320px;
+        display: inline-block;
+        vertical-align: top;
+        background-color: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+
+        <figure class="product-media" style="height: 220px; text-align: center; margin: 0; background-color: #f8f8f8;">
+            <a href="@Url.Action("productDetails","Customer",new{id= pro.product_id})" style="display: inline-block; height: 100%;">
+                <img src="@("~/product_images/" + pro.product_image)"
+                     alt="Product image"
+                     class="product-image"
+                     asp-append-version="true"
+                     style="height: 200px; width: 300px; object-fit: cover; margin-top: 10px;" />
+            </a>
+
+            <div class="product-action-vertical" style="margin-top: 10px;">
+                <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist">
+                    <span style="font-size: 13px;">♡ Add to Wishlist</span>
+                </a>
+            </div>
+            <div class="product-action" style="margin-top: 5px;">
+                <form method="post" asp-action="AddToCart">
+                <input type="hidden" name="prod_id" value="@pro.product_id" />
+                <input type="submit" value="Add to cart" class="btn form-control btn-product btn-cart" />
+            </form>
+            @* <div class="product-action" style="margin-top: 5px;">
+                <a href="#" class="btn-product btn-cart">
+                    <span style="font-size: 13px;">🛒 Add to Cart</span>
+                </a> *@
+            </div>
+        </figure>
+
+        <div class="product-body" style="text-align: center; padding: 10px 15px;">
+            <h3 class="product-title" style="font-size: 16px; margin: 10px 0 5px;">
+                <a href="@Url.Action("productDetails","Customer",new{id= pro.product_id})" style="text-decoration: none; color: #333;">@pro.product_name</a>
+            </h3>
+            <div class="product-price" style="font-weight: bold; color: #e63946; font-size: 15px;">
+                ৳@pro.product_price
+            </div>
+        </div>
+    </div>
+}

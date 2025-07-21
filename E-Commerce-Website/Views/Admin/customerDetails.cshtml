@@ -1,0 +1,30 @@
+﻿@model Customer
+
+<div class="container-fluid px-4">
+    <h2 class="mt-4 text-center text-uppercase" style="letter-spacing: 4px;">Customer Details</h2>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="text-center mb-3">
+            <img src="@Url.Content("~/customer_images/" + Model.customer_image)"
+                 asp-append-version="true"
+                 width="250"
+                 height="250"
+                 class="img-thumbnail"
+                 alt="Customer Image" />
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item"><strong>ID:</strong> @Model.customer_id</li>
+            <li class="list-group-item"><strong>Name:</strong> @Model.customer_name</li>
+            <li class="list-group-item"><strong>Phone:</strong> @Model.customer_phone</li>
+            <li class="list-group-item"><strong>Email:</strong> @Model.customer_email</li>
+            <li class="list-group-item"><strong>Password:</strong> @Model.customer_password</li>
+            <li class="list-group-item"><strong>Gender:</strong> @Model.customer_gender</li>
+            <li class="list-group-item"><strong>Country:</strong> @Model.customer_country</li>
+            <li class="list-group-item"><strong>City:</strong> @Model.customer_city</li>
+            <li class="list-group-item"><strong>Address:</strong> @Model.customer_address</li>
+        </ul>
+    </div>
+</div>

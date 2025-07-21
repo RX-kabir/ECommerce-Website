@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2>Checkout</h2>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">@ViewBag.Message</div>
+    }
+
+    <form method="post" asp-action="Checkout">
+        <div class="form-group">
+            <label>Customer ID</label>
+            <input type="number" name="cust_id" class="form-control" required />
+        </div>
+
+        <div class="form-group mt-2">
+            <label>Total Price</label>
+            <input type="number" step="0.01" name="total_price" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Place Order</button>
+    </form>
+</div>
+

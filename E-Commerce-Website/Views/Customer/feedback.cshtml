@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "feedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="mt-2">Get In Touch With Us</h2>
+<div class="container mt-4">
+ 
+    <div class="row">
+        <div class="col-md-5">
+            <form method="post">
+                <input type="text" placeholder="Enter Your Full Name" name="user_name" class="form-control mb-4"/>
+                <textarea class="form-control mb-4" placeholder="Enter Your Message" name="message"></textarea>
+                <input type="submit" class="btn btn-warning btn-block"/>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+          <div class="col-md-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.4044799149847!2d91.81035672121732!3d22.502973060672552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd77851e5fba9%3A0x77e59f952a3fb977!2sHathazari%20College%20Gate!5e1!3m2!1sen!2sbd!4v1752959736875!5m2!1sen!2sbd" width="550" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </div>
+    
+        <h6 class="text-success">@TempData["message"]</h6>
+	    
+</div>
+

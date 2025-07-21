@@ -1,0 +1,36 @@
+﻿@model Product
+
+
+<div class="container-fluid px-4">
+    <h2 class="mt-4 text-center text-uppercase" style="letter-spacing:4px">Update Product</h2>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+        <form method="post">
+            <input type="hidden" name="product_id" value="@Model.product_id" />
+            <input type="text" placeholder="Enter Product Name" name="product_name" class="form-control my-3" value="@Model.product_name" />
+            <input type="text" placeholder="Enter Product Price" name="product_price" class="form-control my-3" value="@Model.product_price" />
+            <input type="text" placeholder="Enter Product description" name="product_description" class="form-control my-3" value="@Model.product_description" />
+            @Html.Partial("CategoryDropdown", ViewData["category"])
+            <input type="hidden" name="product_image" value="@Model.product_image" />
+            <input type="submit" value="Update Profile" class="form-control my-3 btn btn-primary" />
+
+        </form>
+
+        <form method="post" asp-action="ChangeProductImage" enctype="multipart/form-data">
+            <input type="hidden" name="product_id" value="@Model.product_id" />
+            <input type="hidden" placeholder="Enter Product Name" name="product_name" class="form-control my-3" value="@Model.product_name" />
+            <input type="hidden" placeholder="Enter Product Price" name="product_price" class="form-control my-3" value="@Model.product_price" />
+            <input type="hidden" placeholder="Enter Product description" name="product_description" class="form-control my-3" value="@Model.product_description" />
+            <input type="hidden" placeholder="Enter Category" name="cat_id" value="@Model.cat_id" />
+            <input type="file" name="product_image" />
+            <img src="@("~/product_images/"+Model.product_image)" asp-append-version="true" style="width : 250px; height :250px" />
+            <input type="submit" value="Change Product Image" class="form-control my-3 btn btn-primary" />
+        </form>
+
+    </div>
+    <div class="col-md-2"></div>
+
+

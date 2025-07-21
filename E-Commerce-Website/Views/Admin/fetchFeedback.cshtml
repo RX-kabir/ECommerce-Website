@@ -1,0 +1,41 @@
+﻿@model List<Feedback>
+
+<div class="container-fluid px-4">
+    <div class="card shadow rounded-4 mt-4">
+        <div class="card-header bg-primary text-white text-center">
+            <h3 class="mb-0 text-uppercase" style="letter-spacing:2px;">All Feedback</h3>
+        </div>
+        <div class="card-body">
+            <
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered text-center align-middle rounded-4 overflow-hidden">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">User Name</th>
+                            <th scope="col">User Message</th>
+                            <th scope="col">Options</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var feedback in Model)
+                        {
+                            <tr>
+                                <td>@feedback.user_name</td>
+                                <td>@feedback.message</td>
+                                <td>
+                                    <a href="@Url.Action("deletePermissionFeedback", "Admin", new { id = feedback.feedback_id })" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this feedback?');">
+                                        <i class="fas fa-trash-alt"></i> Delete
+                                    </a>
+
+                                </td>
+                               
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

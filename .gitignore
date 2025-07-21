@@ -1,0 +1,24 @@
+# Ignore Visual Studio temporary files, build results, and user-specific files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+*.dbmdl
+*.pdb
+*.psess
+*.vsp
+*.vsix
+_ReSharper*/
+TestResults/
+*.vsix
+*.ncb
+*.sdf
+*.ipch
+*.aps
+*.cachefile
+
+# Ignore app settings with sensitive info
+appsettings.Development.json

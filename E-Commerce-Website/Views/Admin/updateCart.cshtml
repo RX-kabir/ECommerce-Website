@@ -1,0 +1,39 @@
+﻿@model Cart
+
+<div class="container-fluid px-4">
+    <h2 class="mt-5 text-center text-uppercase fw-bold text-primary" style="letter-spacing: 2px;">
+        🛒 Update / Edit Cart Status
+    </h2>
+</div>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+        <div class="card shadow-lg rounded-4 border-0">
+            <div class="card-body p-5 bg-light">
+
+                <form method="post">
+                    <!-- Hidden Fields -->
+                    <input type="hidden" name="cart_id" value="@Model.cart_id" />
+                    <input type="hidden" name="product_id" value="@Model.product_id" />
+                    <input type="hidden" name="cust_id" value="@Model.cust_id" />
+                    <input type="hidden" name="product_quantity" value="@Model.product_quantity" />
+
+                    <!-- Status Dropdown -->
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold fs-5">Cart Status</label>
+                        <select name="cart_status" class="form-select form-select-lg rounded-pill shadow-sm">
+                            <option value="0" selected="@((Model.cart_status == 0) ? "selected" : null)">🕒 Pending</option>
+                            <option value="1" selected="@((Model.cart_status == 1) ? "selected" : null)">✅ Order</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-success w-100 py-2 rounded-pill fs-5 shadow">
+                        Update Cart
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

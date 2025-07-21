@@ -1,0 +1,1374 @@
+﻿@{
+    ViewData["Title"]="Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+ <main class="main">
+    <div class="mb-2"></div><!-- End .mb-2 -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 d-none d-xl-block">
+                <nav class="side-nav">
+                    <div class="sidenav-title">Browse Categories</div><!-- End .sidenav-title -->
+                    <ul class="menu-vertical sf-arrows">
+                        @* <li>
+                            <a href="product.html" class="sf-with-ul">Playstation</a>
+
+                            <div class="megamenu megamenu-sm">
+                                <div class="row no-gutters">
+                                    <div class="col-md-6">
+                                        <div class="menu-col">
+                                            <div class="menu-title">Games Software</div><!-- End .menu-title -->
+                                            <ul>
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Adventure</a></li>
+                                                <li><a href="#">Sports</a></li>
+                                                <li><a href="#">Strategy</a></li>
+                                                <li><a href="#">Role-Playing Game</a></li>
+                                                <li><a href="#">Action-Adventure</a></li>
+                                                <li><a href="#">Stealth</a></li>
+                                                <li><a href="#">Shooter</a></li>
+                                            </ul>
+                                        </div><!-- End .menu-col -->
+                                    </div><!-- End .col-md-6 -->
+
+                                    <div class="col-md-6">
+                                        <div class="banner banner-overlay">
+                                            <a href="category.html">
+                                                <img src="~/website/images/demos/demo-19/menu/banner-2.jpg" alt="Banner">
+                                            </a>
+                                        </div><!-- End .banner -->
+                                    </div><!-- End .col-md-6 -->
+                                </div><!-- End .row -->
+                            </div><!-- End .megamenu megamenu-sm -->
+                        </li> *@
+                        @* <li class="megamenu-container">
+                            <a href="category.html" class="sf-with-ul">XBOX</a>
+
+                            <div class="megamenu">
+                                <div class="row no-gutters">
+                                    <div class="col-md-8">
+                                        <div class="menu-col">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="menu-title">Games Software</div><!-- End .menu-title -->
+                                                    <ul>
+                                                        <li><a href="#">Action</a></li>
+                                                        <li><a href="#">Adventure</a></li>
+                                                        <li><a href="#">Music</a></li>
+                                                        <li><a href="#">Racing</a></li>
+                                                        <li><a href="#">Sports</a></li>
+                                                        <li><a href="#">Strategy</a></li>
+                                                        <li><a href="#">Role-Playing Game</a></li>
+                                                        <li><a href="#">Action-Adventure</a></li>
+                                                        <li><a href="#">Stealth</a></li>
+                                                        <li><a href="#">Shooter</a></li>
+                                                        <li><a href="#">Horror</a></li>
+                                                    </ul>
+                                                </div><!-- End .col-md-6 -->
+
+                                                <div class="col-md-6">
+                                                    <div class="menu-title">Game Console & Accessories</div><!-- End .menu-title -->
+                                                    <ul>
+                                                        <li><a href="#">Console</a></li>
+                                                        <li><a href="#">Headsets</a></li>
+                                                        <li><a href="#">Collectibles</a></li>
+                                                        <li><a href="#">Gaming Chairs</a></li>
+                                                        <li><a href="#">Controller</a></li>
+                                                        <li><a href="#">Digital</a></li>
+                                                    </ul>
+                                                </div><!-- End .col-md-6 -->
+                                            </div><!-- End .row -->
+                                        </div><!-- End .menu-col -->
+                                    </div><!-- End .col-md-8 -->
+
+                                    <div class="col-md-4">
+                                        <div class="banner banner-overlay">
+                                            <a href="category.html" class="banner banner-menu">
+                                                <img src="~/website/images/demos/demo-19/menu/banner-1.jpg" alt="Banner">
+                                            </a>
+                                        </div><!-- End .banner banner-overlay -->
+                                    </div><!-- End .col-md-4 -->
+                                </div><!-- End .row -->
+                            </div><!-- End .megamenu -->
+                        </li> *@
+
+                        @Html.Partial("fetchCategoryList",ViewData["category"])
+                       
+                    </ul><!-- End .menu -->
+                </nav><!-- End .side-nav -->
+            </div><!-- End .col-lg-3 -->
+
+            <div class="col-lg-8 col-xl-6">
+                <div class="banner banner-overlay banner-lg  content-left">
+                    <a href="#">
+                        <img src="~/website/images/demos/demo-19/banners/banner-1.jpg" alt="Banner">
+                    </a>
+                    <div class="banner-content">
+                        <h4 class="banner-subtitle">Pre-order now</h4>
+                        <img src="~/website/images/demos/demo-19/banners/banner-1-title.png" alt="Banner 1 Title" width="217" height="54" class="mb-1">
+                        <a href="#" class="banner-link size-lg">Pre-Order Now<i class="icon-long-arrow-right"></i></a>
+                    </div>
+                </div><!-- End .banner -->
+            </div><!-- End .col-lg-6 -->
+
+            <div class="col-sm-6 col-lg-4 col-xl-3">
+                <div class="banner banner-overlay banner-sm content-right">
+                    <a href="#">
+                        <img src="~/website/images/demos/demo-19/banners/banner-2.jpg" alt="Banner">
+                    </a>
+                    <div class="banner-content text-right">
+                        <h4 class="banner-subtitle">Weekend Offer</h4>
+                        <img class="banner-title-img" src="~/website/images/demos/demo-19/banners/banner-2-title.png" alt="Banner-2">
+                        <h4 class="banner-price">Save<span class="price">$19,99</span></h4>
+                        <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                    </div>
+                </div><!-- End .banner -->
+
+                <div class="banner banner-overlay d-none d-lg-block banner-sm content-right align-center">
+                    <a href="#">
+                        <img src="~/website/images/demos/demo-19/banners/banner-3.jpg" alt="Banner">
+                    </a>
+                    <div class="banner-content text-right">
+                        <img class="banner-title-img" src="~/website/images/demos/demo-19/banners/banner-3-title.png" alt="Banner-3">
+                        <h5 class="text-white">35% OFF</h5>
+                        <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                    </div>
+                </div><!-- End .banner -->
+            </div><!-- End .col-lg-3 -->
+
+           @*  <div class="col-sm-6 col-lg-3">
+                <div class="banner banner-overlay banner-sm content-right align-center">
+                    <a href="#">
+                        <img src="~/website/images/demos/demo-19/banners/banner-4.jpg" alt="Banner">
+                    </a>
+                    <div class="banner-content" style="left: auto; right: 3rem; align-items: flex-start;">
+                        <h4 class="banner-subtitle">Weekend Sale</h4>
+                        <img class="banner-title-img" src="~/website/images/demos/demo-19/banners/banner-4-title.png" alt="Banner-4">
+                        <h4 class="banner-price"><span class="off">25% off</span></h4>
+                        <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                    </div>
+                </div><!-- End .banner -->
+            </div><!-- End .col-lg-3 --> *@
+
+            @* <div class="col-lg-9">
+                <div class="banner banner-overlay banner-lg">
+                    <a href="#">
+                        <img src="~/website/images/demos/demo-19/banners/banner-5.jpg" alt="Banner">
+                    </a>
+                    <div class="banner-content">
+                        <h4 class="banner-subtitle">Amazing Value</h4>
+                        <img class="banner-title-img mb-1" src="~/website/images/demos/demo-19/banners/banner-5-title.png" alt="Banner-5">
+                        <a href="#" class="banner-link">Pre-Order Now<i class="icon-long-arrow-right"></i></a>
+                    </div>
+                </div><!-- End .banner -->
+            </div><!-- End .col-lg-9 --> *@
+        </div><!-- End .row -->
+    </div><!-- End .container -->
+
+    <div class="icon-boxes-container icon-boxes-separator bg-transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon">
+                            <i class="icon-rocket"></i>
+                        </span>
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">Free Shipping</h3><!-- End .icon-box-title -->
+                            <p>Orders $50 or more</p>
+                        </div><!-- End .icon-box-content -->
+                    </div><!-- End .icon-box -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon">
+                            <i class="icon-rotate-left"></i>
+                        </span>
+
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">Free Returns</h3><!-- End .icon-box-title -->
+                            <p>Within 30 days</p>
+                        </div><!-- End .icon-box-content -->
+                    </div><!-- End .icon-box -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon">
+                            <i class="icon-info-circle"></i>
+                        </span>
+
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">Get 20% Off 1 Item</h3><!-- End .icon-box-title -->
+                            <p>When you sign up</p>
+                        </div><!-- End .icon-box-content -->
+                    </div><!-- End .icon-box -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon">
+                            <i class="icon-life-ring"></i>
+                        </span>
+
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">We Support</h3><!-- End .icon-box-title -->
+                            <p>24/7 amazing services</p>
+                        </div><!-- End .icon-box-content -->
+                    </div><!-- End .icon-box -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+            </div><!-- End .row -->
+        </div><!-- End .container -->
+    </div><!-- End .icon-boxes-container -->
+
+    @* <div class="bg-light pt-3 pb-5 mb-5">
+        <div class="container">
+            <ul class="nav nav-pills nav-big nav-border-anim justify-content-center mb-5" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="products-trending-link" data-toggle="tab" href="#products-trending-tab" role="tab" aria-controls="products-trending-tab" aria-selected="true">Now Trending</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="products-new-link" data-toggle="tab" href="#products-new-tab" role="tab" aria-controls="products-new-tab" aria-selected="false">New Releases</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="products-best-link" data-toggle="tab" href="#products-best-tab" role="tab" aria-controls="products-best-tab" aria-selected="false">Best-Rated</a>
+                </li>
+            </ul>
+            <div class="tab-content tab-content-carousel">
+                <div class="tab-pane p-0 fade show active" id="products-trending-tab" role="tabpanel" aria-labelledby="products-trending-link">
+                    <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                         data-owl-options='{
+                                        "nav": false,
+                                        "dots": true,
+                                        "margin": 20,
+                                        "loop": false,
+                                        "responsive": {
+                                            "0": {
+                                                "items":2
+                                            },
+                                            "480": {
+                                                "items":2
+                                            },
+                                            "768": {
+                                                "items":3
+                                            },
+                                            "992": {
+                                                "items":4
+                                            },
+                                            "1200": {
+                                                "items":5,
+                                                "nav": true
+                                            }
+                                        }
+                                    }'>
+                        <div class="product">
+                            <figure class="product-media">
+                                <span class="product-label label-sale">Sale</span>
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-1.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">Call of Duty <br>WWII - Gold Edition</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    <span class="new-price">$24.00</span>
+                                    <span class="old-price">Was $59.99</span>
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-2.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">World War Z</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $39.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <span class="product-label label-top">Top</span>
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-3.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">Borderlands: <br>The Handsome Collection</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $59.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-4.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Action & adventure</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">The Witcher 3: Wild Hunt</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $39.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <span class="product-label label-sale">Sale</span>
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-5.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Action & adventure</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">GTA Online: Criminal Enterprise Starter Pack</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    <span class="new-price">$19.49</span>
+                                    <span class="old-price">Was $24.49</span>
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-6.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">Tom Clancy’s <br>Ghost Recon Wildlands</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $49.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+                    </div><!-- End .owl-carousel -->
+                </div><!-- .End .tab-pane -->
+                <div class="tab-pane p-0 fade" id="products-new-tab" role="tabpanel" aria-labelledby="products-new-link">
+                    <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                         data-owl-options='{
+                                        "nav": false,
+                                        "dots": true,
+                                        "margin": 20,
+                                        "loop": false,
+                                        "responsive": {
+                                            "0": {
+                                                "items":2
+                                            },
+                                            "480": {
+                                                "items":2
+                                            },
+                                            "768": {
+                                                "items":3
+                                            },
+                                            "992": {
+                                                "items":4
+                                            },
+                                            "1200": {
+                                                "items":5,
+                                                "nav": true
+                                            }
+                                        }
+                                    }'>
+                        <div class="product">
+                            <figure class="product-media">
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-6.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">Tom Clancy’s <br>Ghost Recon Wildlands</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $49.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <span class="product-label label-sale">Sale</span>
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-5.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Action & adventure</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">GTA Online: Criminal Enterprise Starter Pack</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    <span class="new-price">$19.49</span>
+                                    <span class="old-price">Was $24.49</span>
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-2.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">World War Z</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $39.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <span class="product-label label-sale">Sale</span>
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-1.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">Call of Duty <br>WWII - Gold Edition</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    <span class="new-price">$24.00</span>
+                                    <span class="old-price">Was $59.99</span>
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <span class="product-label label-top">Top</span>
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-3.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">Borderlands: <br>The Handsome Collection</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $59.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-4.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Action & adventure</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">The Witcher 3: Wild Hunt</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $39.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+                    </div><!-- End .owl-carousel -->
+                </div><!-- .End .tab-pane -->
+                <div class="tab-pane p-0 fade" id="products-best-tab" role="tabpanel" aria-labelledby="products-best-link">
+                    <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                         data-owl-options='{
+                                        "nav": false,
+                                        "dots": true,
+                                        "margin": 20,
+                                        "loop": false,
+                                        "responsive": {
+                                            "0": {
+                                                "items":2
+                                            },
+                                            "480": {
+                                                "items":2
+                                            },
+                                            "768": {
+                                                "items":3
+                                            },
+                                            "992": {
+                                                "items":4
+                                            },
+                                            "1200": {
+                                                "items":5,
+                                                "nav": true
+                                            }
+                                        }
+                                    }'>
+                        <div class="product">
+                            <figure class="product-media">
+                                <span class="product-label label-top">Top</span>
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-3.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">Borderlands: <br>The Handsome Collection</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $59.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-2.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">World War Z</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $39.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-4.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Action & adventure</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">The Witcher 3: Wild Hunt</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $39.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <span class="product-label label-sale">Sale</span>
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-5.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Action & adventure</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">GTA Online: Criminal Enterprise Starter Pack</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    <span class="new-price">$19.49</span>
+                                    <span class="old-price">Was $24.49</span>
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product">
+                            <figure class="product-media">
+                                <a href="product.html">
+                                    <img src="~/website/images/demos/demo-19/products/product-6.jpg" alt="Product image" class="product-image">
+                                </a>
+
+                                <div class="product-action-vertical">
+                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                </div><!-- End .product-action-vertical -->
+
+                                <div class="product-action">
+                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                </div><!-- End .product-action -->
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="#">Shooter</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">Tom Clancy’s <br>Ghost Recon Wildlands</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    $49.99
+                                </div><!-- End .product-price -->
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+                    </div><!-- End .owl-carousel -->
+                </div><!-- .End .tab-pane -->
+            </div><!-- End .tab-content -->
+        </div><!-- End .container -->
+    </div><!-- End .bg-light pt-4 pb-4 --> *@
+
+    
+
+    <div class="container">
+        <hr class="mt-0 mb-4">
+    </div><!-- End .container -->
+
+    @* <div class="container">
+        <div class="heading heading-flex mb-2 mb-lg-3">
+            <div class="heading-left">
+                <h2 class="title mb-0">Games Coming Soon</h2><!-- End .title -->
+            </div><!-- End .heading-left -->
+
+            <div class="heading-right">
+                <a href="category.html" class="title-link">View more products <i class="icon-long-arrow-right"></i></a>
+            </div><!-- End .heading-right -->
+        </div><!-- End .heading --> *@
+
+        @* <div class="games-soon">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="products">
+                        <div class="row">
+                            <div class="col-6 col-md-4">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <a href="product.html">
+                                            <img src="~/website/images/demos/demo-19/products/product-6.jpg" alt="Product image" class="product-image">
+                                        </a>
+
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                        </div><!-- End .product-action-vertical -->
+
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                        </div><!-- End .product-action -->
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">Shooter</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title"><a href="product.html">Tom Clancy’s <br>Ghost Recon Wildlands</a></h3><!-- End .product-title -->
+                                        <div class="product-price">
+                                            $49.99
+                                        </div><!-- End .product-price -->
+                                    </div><!-- End .product-body -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-6 col-md-4 -->
+
+                            <div class="col-6 col-md-4">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <a href="product.html">
+                                            <img src="~/website/images/demos/demo-19/products/product-7.jpg" alt="Product image" class="product-image">
+                                        </a>
+
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                        </div><!-- End .product-action-vertical -->
+
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                        </div><!-- End .product-action -->
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">Sport</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title"><a href="product.html">NBA 2K19 450,000 VC</a></h3><!-- End .product-title -->
+                                        <div class="product-price">
+                                            $74.99
+                                        </div><!-- End .product-price -->
+                                    </div><!-- End .product-body -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-6 col-md-4 -->
+
+                            <div class="col-6 col-md-4">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <a href="product.html">
+                                            <img src="~/website/images/demos/demo-19/products/product-8.jpg" alt="Product image" class="product-image">
+                                        </a>
+
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                        </div><!-- End .product-action-vertical -->
+
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                        </div><!-- End .product-action -->
+
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">Shooter</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title"><a href="product.html">STAR WARS Battlefront II</a></h3><!-- End .product-title -->
+                                        <div class="product-price">
+                                            $24.99
+                                        </div><!-- End .product-price -->
+                                    </div><!-- End .product-body -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-6 col-md-4 -->
+
+                            <div class="col-6 col-md-4">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <a href="product.html">
+                                            <img src="~/website/images/demos/demo-19/products/product-9.jpg" alt="Product image" class="product-image">
+                                        </a>
+
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                        </div><!-- End .product-action-vertical -->
+
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                        </div><!-- End .product-action -->
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">Shooter</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title"><a href="product.html">Call of Duty: Black Ops 4 Spectre Rising Edition</a></h3><!-- End .product-title -->
+                                        <div class="product-price">
+                                            $39.99
+                                        </div><!-- End .product-price -->
+                                    </div><!-- End .product-body -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-6 col-md-4 -->
+
+                            <div class="col-6 col-md-4">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <a href="product.html">
+                                            <img src="~/website/images/demos/demo-19/products/product-10.jpg" alt="Product image" class="product-image">
+                                        </a>
+
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                        </div><!-- End .product-action-vertical -->
+
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-cart"><span>Pre-order Now</span></a>
+                                        </div><!-- End .product-action -->
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">Role playing</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title"><a href="product.html">Diablo III: <br>Eternal Collection</a></h3><!-- End .product-title -->
+                                        <div class="product-price">
+                                            $19.99
+                                        </div><!-- End .product-price -->
+                                    </div><!-- End .product-body -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-6 col-md-4 -->
+
+                            <div class="col-6 col-md-4">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <a href="product.html">
+                                            <img src="~/website/images/demos/demo-19/products/product-11.jpg" alt="Product image" class="product-image">
+                                        </a>
+
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                                        </div><!-- End .product-action-vertical -->
+
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                        </div><!-- End .product-action -->
+                                    </figure><!-- End .product-media -->
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#">Role playing</a>
+                                        </div><!-- End .product-cat -->
+                                        <h3 class="product-title"><a href="product.html">Tom Clancy's <br>The Division 2</a></h3><!-- End .product-title -->
+                                        <div class="product-price">
+                                            $24.99
+                                        </div><!-- End .product-price -->
+                                    </div><!-- End .product-body -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-6 col-md-4 -->
+                        </div><!-- End .row -->
+                    </div><!-- End .products -->
+                </div><!-- End .col-lg-7 -->
+
+                <div class="col-lg-5 order-lg-first">
+                    <div class="games-banners-slider owl-carousel owl-simple" data-toggle="owl"
+                         data-owl-options='{
+                                        "nav": false,
+                                        "dots": true,
+                                        "margin": 0,
+                                        "loop": false,
+                                        "items":1
+                                    }'>
+                        <div class="banner banner-overlay product-banner">
+                            <a href="#">
+                                <img src="~/website/images/demos/demo-19/banners/banner-9.jpg" alt="Banner">
+                            </a>
+                            <div class="banner-content align-items-center center">
+                                <img class="banner-title-img mb-1" src="~/website/images/demos/demo-19/banners/banner-9-title.png" alt="Banner-9">
+                                <h4 class="banner-price mb-2" style="font-weight: 600;">$29.99</h4>
+                                <a href="#" class="banner-link size-lg">Pre-Order Now<i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .banner -->
+
+                        <div class="banner banner-overlay product-banner">
+                            <a href="#">
+                                <img src="~/website/images/demos/demo-19/banners/banner-10.jpg" alt="Banner">
+                            </a>
+                            <div class="banner-content align-items-center">
+                                <h4 class="banner-subtitle" style="letter-spacing: 0.1em;">Out 14 May 2019</h4>
+                                <img class="banner-title-img mb-1" src="~/website/images/demos/demo-19/banners/banner-10-title.png" alt="Banner-10">
+                                <a href="#" class="banner-link size-lg">Pre-Order Now<i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .banner -->
+
+                    </div><!-- End .owl-carousel -->
+                </div><!-- End .col-lg-5 -->
+            </div><!-- End .row -->
+        </div><!-- End .games-soon -->
+    </div><!-- End .container --> *@
+
+    <div class="mb-3"></div><!-- End .mb-3 -->
+
+    
+
+    <div class="container">
+        <div class="heading heading-flex mb-2">
+            <div class="heading-left">
+                <h2 class="title mb-5">Our Products</h2><!-- End .title -->
+            </div><!-- End .heading-left -->
+
+            <div class="heading-right">
+                <a href="@Url.Action("fetchAllProducts","Customer")" class="title-link">View more products <i class="icon-long-arrow-right"></i></a>
+            </div><!-- End .heading-right -->
+        </div><!-- End .heading -->
+
+        <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
+             data-owl-options='{
+                            "nav": false,
+                            "dots": true,
+                            "margin": 20,
+                            "loop": false,
+                            "responsive": {
+                                "0": {
+                                    "items":2
+                                },
+                                "480": {
+                                    "items":2
+                                },
+                                "768": {
+                                    "items":3
+                                },
+                                "992": {
+                                    "items":4
+                                },
+                                "1200": {
+                                    "items":5,
+                                    "nav": true
+                                }
+                            }
+                        }'>
+
+            <!-- Start .product -->
+            @Html.Partial("fetchProducts", ViewData["product"])
+
+           @*  <div class="product">
+                <figure class="product-media">
+                    <span class="product-label label-new">New</span>
+                    <a href="product.html">
+                        <img src="~/website/images/demos/demo-19/products/product-12.jpg" alt="Product image" class="product-image">
+                    </a>
+
+                    <div class="product-action-vertical">
+                        <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                    </div><!-- End .product-action-vertical -->
+
+                    <div class="product-action">
+                        <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                    </div><!-- End .product-action -->
+                </figure><!-- End .product-media -->
+
+                <div class="product-body">
+                    <h3 class="product-title"><a href="product.html">Microsoft - Xbox Elite Wireless Controller</a></h3><!-- End .product-title -->
+                    <div class="product-price">
+                        $149.99
+                    </div><!-- End .product-price -->
+                </div><!-- End .product-body -->
+            </div><!-- End .product --> *@
+
+            @* <div class="product">
+                <figure class="product-media">
+                    <span class="product-label label-top">Top</span>
+                    <a href="product.html">
+                        <img src="~/website/images/demos/demo-19/products/product-13.jpg" alt="Product image" class="product-image">
+                    </a>
+
+                    <div class="product-action-vertical">
+                        <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                    </div><!-- End .product-action-vertical -->
+
+                    <div class="product-action">
+                        <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                    </div><!-- End .product-action -->
+                </figure><!-- End .product-media -->
+
+                <div class="product-body">
+                    <h3 class="product-title"><a href="product.html">Sony - PlayStation 4 1TB Console - Black</a></h3><!-- End .product-title -->
+                    <div class="product-price">
+                        $299.99
+                    </div><!-- End .product-price -->
+                </div><!-- End .product-body -->
+            </div><!-- End .product -->
+
+            <div class="product">
+                <figure class="product-media">
+                    <a href="product.html">
+                        <img src="~/website/images/demos/demo-19/products/product-14.jpg" alt="Product image" class="product-image">
+                    </a>
+
+                    <div class="product-action-vertical">
+                        <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                    </div><!-- End .product-action-vertical -->
+
+                    <div class="product-action">
+                        <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                    </div><!-- End .product-action -->
+                </figure><!-- End .product-media -->
+
+                <div class="product-body">
+                    <h3 class="product-title"><a href="product.html">Nintendo - Switch 32GB Console</a></h3><!-- End .product-title -->
+                    <div class="product-price">
+                        $149.99
+                    </div><!-- End .product-price -->
+                </div><!-- End .product-body -->
+            </div><!-- End .product -->
+
+            <div class="product">
+                <figure class="product-media">
+                    <span class="product-label label-top">Top</span>
+                    <a href="product.html">
+                        <img src="~/website/images/demos/demo-19/products/product-15.jpg" alt="Product image" class="product-image">
+                    </a>
+
+                    <div class="product-action-vertical">
+                        <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                    </div><!-- End .product-action-vertical -->
+
+                    <div class="product-action">
+                        <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                    </div><!-- End .product-action -->
+                </figure><!-- End .product-media -->
+
+                <div class="product-body">
+                    <h3 class="product-title"><a href="product.html">HyperX - Cloud Alpha Wired Stereo Gaming Headset</a></h3><!-- End .product-title -->
+                    <div class="product-price">
+                        $99.99
+                    </div><!-- End .product-price -->
+                </div><!-- End .product-body -->
+            </div><!-- End .product -->
+
+            <div class="product">
+                <figure class="product-media">
+                    <a href="product.html">
+                        <img src="~/website/images/demos/demo-19/products/product-16.jpg" alt="Product image" class="product-image">
+                    </a>
+
+                    <div class="product-action-vertical">
+                        <a href="#" class="btn-product-icon btn-wishlist" title="Add to Wishlist"><span>add to wishlist</span></a>
+                    </div><!-- End .product-action-vertical -->
+
+                    <div class="product-action">
+                        <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                    </div><!-- End .product-action -->
+                </figure><!-- End .product-media -->
+
+                <div class="product-body">
+                    <h3 class="product-title"><a href="product.html">Logitech - G502 HERO Wired Optical Gaming Mouse Pack</a></h3><!-- End .product-title -->
+                    <div class="product-price">
+                        $59.99
+                    </div><!-- End .product-price -->
+                </div><!-- End .product-body --> *@
+            @* </div><!-- End .product --> *@
+        </div><!-- End .owl-carousel -->
+
+        <div class="mb-5"></div><!-- End .mb-4 -->
+    </div><!-- End .container -->
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-6 col-md-4">
+                    <div class="banner banner-overlay banner-sm banner-ad content-left align-center">
+                        <a href="#">
+                            <img src="~/website/images/demos/demo-19/banners/banner-6.jpg" alt="Banner">
+                        </a>
+                        <div class="banner-content">
+                            <h4 class="banner-subtitle">Weekend Offer</h4>
+                            <img class="banner-title-img" src="~/website/images/demos/demo-19/banners/banner-6-title.png" alt="Banner-6">
+                            <h4 class="banner-price"><span class="off" style="font-weight: 600;">Save <span class="price">$19.99</span></span></h4>
+                            <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                        </div>
+                    </div><!-- End .banner -->
+                </div><!-- End .col-md-4 -->
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="banner banner-overlay banner-sm banner-ad content-left align-center">
+                        <a href="#">
+                            <img src="~/website/images/demos/demo-19/banners/banner-7.jpg" alt="Banner">
+                        </a>
+                        <div class="banner-content">
+                            <h4 class="banner-subtitle" style="letter-spacing: 0.1em;">Amazing Deal on an</h4>
+                            <h2 class="banner-title mb-0" style="font-size: 3rem;">XBOX ONE</h2>
+                            <h4 class="banner-price"><span class="off" style="font-weight: 600;">Save $50</span></h4>
+                            <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                        </div>
+                    </div><!-- End .banner -->
+                </div><!-- End .col-md-4 -->
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="banner banner-overlay banner-sm banner-ad content-left align-center">
+                        <a href="#">
+                            <img src="~/website/images/demos/demo-19/banners/banner-8.jpg" alt="Banner">
+                        </a>
+                        <div class="banner-content">
+                            <h4 class="banner-price text-white mb-1">Save $29.00</h4>
+                            <img class="banner-title-img mb-2" src="~/website/images/demos/demo-19/banners/banner-8-title.png" alt="Banner-8">
+                            <a href="#" class="banner-link">Buy Now<i class="icon-long-arrow-right"></i></a>
+                        </div>
+                    </div><!-- End .banner -->
+                </div><!-- End .col-md-4 -->
+            </div><!-- End .row -->
+        </div><!-- End .container -->
+
+    @* <div class="blog-posts bg-light pt-4 pb-5">
+        <div class="container">
+            <div class="heading heading-flex mb-2">
+                <div class="heading-left">
+                    <h2 class="title mb-0">From Our Blog</h2><!-- End .title -->
+                </div><!-- End .heading-left -->
+
+                <div class="heading-right">
+                    <a href="blog.html" class="title-link">View more articles <i class="icon-long-arrow-right"></i></a>
+                </div><!-- End .heading-right -->
+            </div><!-- End .heading -->
+
+            <div class="owl-carousel owl-simple carousel-equal-height" data-toggle="owl"
+                 data-owl-options='{
+                                "nav": false,
+                                "dots": true,
+                                "items": 3,
+                                "margin": 20,
+                                "loop": false,
+                                "responsive": {
+                                    "0": {
+                                        "items":1
+                                    },
+                                    "600": {
+                                        "items":2
+                                    },
+                                    "992": {
+                                        "items":3
+                                    },
+                                    "1200": {
+                                        "items":4,
+                                        "nav": true
+                                    }
+                                }
+                            }'>
+                <article class="entry">
+                    <figure class="entry-media">
+                        <a href="single.html">
+                            <img src="~/website/images/demos/demo-19/blog/post-1.jpg" alt="image desc">
+                        </a>
+                    </figure><!-- End .entry-media -->
+
+                    <div class="entry-body">
+                        <div class="entry-meta">
+                            <a href="#">Nov 22, 2018</a>, 0 Comments
+                        </div><!-- End .entry-meta -->
+
+                        <h3 class="entry-title">
+                            <a href="single.html">Morbi in sem quis dui placerat mauris sit ornare.</a>
+                        </h3><!-- End .entry-title -->
+                    </div><!-- End .entry-body -->
+                </article><!-- End .entry -->
+
+                <article class="entry">
+                    <figure class="entry-media">
+                        <a href="single.html">
+                            <img src="~/website/images/demos/demo-19/blog/post-2.jpg" alt="image desc">
+                        </a>
+                    </figure><!-- End .entry-media -->
+
+                    <div class="entry-body">
+                        <div class="entry-meta">
+                            <a href="#">Dec 12, 2018</a>, 0 Comments
+                        </div><!-- End .entry-meta -->
+
+                        <h3 class="entry-title">
+                            <a href="single.html">Aliquam porttitor mauris sit ametorci.</a>
+                        </h3><!-- End .entry-title -->
+                    </div><!-- End .entry-body -->
+                </article><!-- End .entry -->
+
+                <article class="entry">
+                    <figure class="entry-media">
+                        <a href="single.html">
+                            <img src="~/website/images/demos/demo-19/blog/post-3.jpg" alt="image desc">
+                        </a>
+                    </figure><!-- End .entry-media -->
+
+                    <div class="entry-body">
+                        <div class="entry-meta">
+                            <a href="#">Dec 19, 2018</a>, 2 Comments
+                        </div><!-- End .entry-meta -->
+
+                        <h3 class="entry-title">
+                            <a href="single.html">Cras ornare tristique elit.</a>
+                        </h3><!-- End .entry-title -->
+                    </div><!-- End .entry-body -->
+                </article><!-- End .entry -->
+
+                <article class="entry">
+                    <figure class="entry-media">
+                        <a href="single.html">
+                            <img src="~/website/images/demos/demo-19/blog/post-4.jpg" alt="image desc">
+                        </a>
+                    </figure><!-- End .entry-media -->
+
+                    <div class="entry-body">
+                        <div class="entry-meta">
+                            <a href="#">Dec 19, 2018</a>, 2 Comments
+                        </div><!-- End .entry-meta -->
+
+                        <h3 class="entry-title">
+                            <a href="single.html">Donec consectetuer ligula vulputate sem cursus.</a>
+                        </h3><!-- End .entry-title -->
+                    </div><!-- End .entry-body -->
+                </article><!-- End .entry -->
+
+                <article class="entry">
+                    <figure class="entry-media">
+                        <a href="single.html">
+                            <img src="~/website/images/demos/demo-19/blog/post-1.jpg" alt="image desc">
+                        </a>
+                    </figure><!-- End .entry-media -->
+
+                    <div class="entry-body">
+                        <div class="entry-meta">
+                            <a href="#">Nov 22, 2018</a>, 0 Comments
+                        </div><!-- End .entry-meta -->
+
+                        <h3 class="entry-title">
+                            <a href="single.html">Morbi in sem quis dui placerat mauris sit ornare.</a>
+                        </h3><!-- End .entry-title -->
+                    </div><!-- End .entry-body -->
+                </article><!-- End .entry -->
+            </div><!-- End .owl-carousel -->
+        </div><!-- End .container -->
+    </div><!-- End .blog-posts --> *@
+    <div class="container">
+        <div class="cta cta-horizontal cta-horizontal-box bg-image mb-4" style="background-image: url(~/website/images/demos/demo-19/bg-2.jpg);">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <h3 class="cta-title text-primary">Join Our Newsletter</h3><!-- End .cta-title -->
+                    <p class="cta-desc text-light">Subcribe to get information about products and coupons</p><!-- End .cta-desc -->
+                </div><!-- End .col-lg-5 -->
+
+                <div class="col-lg-7 d-flex justify-content-lg-end">
+                    <form action="#">
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-white" placeholder="Enter your Email Address" aria-label="Email Adress" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary-white btn-rounded" type="submit"><span>Subscribe</span><i class="icon-long-arrow-right"></i></button>
+                            </div><!-- .End .input-group-append -->
+                        </div><!-- .End .input-group -->
+                    </form>
+                </div><!-- End .col-lg-8 -->
+            </div><!-- End .row -->
+        </div><!-- End .cta -->
+    </div><!-- End .container --> 
+</main><!-- End .main --> 

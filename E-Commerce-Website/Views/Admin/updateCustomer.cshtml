@@ -1,0 +1,63 @@
+﻿@model Customer
+
+<div class="container-fluid px-4">
+    <h2 class="mt-4 text-center text-uppercase" style="letter-spacing:4px;">Edit Customer</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data">
+                @* Hidden ID field *@
+                <input type="hidden" name="customer_id" value="@Model.customer_id" />
+
+                <div class="form-group mb-3">
+                    <label for="customer_name">Name</label>
+                    <input type="text" class="form-control" id="customer_name" name="customer_name" value="@Model.customer_name" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="customer_phone">Phone</label>
+                    <input type="text" class="form-control" id="customer_phone" name="customer_phone" value="@Model.customer_phone" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="customer_email">Email</label>
+                    <input type="email" class="form-control" id="customer_email" name="customer_email" value="@Model.customer_email" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="customer_password">Password</label>
+                    <input type="password" class="form-control" id="customer_password" name="customer_password" value="@Model.customer_password" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="customer_gender">Gender</label>
+                    <input type="text" class="form-control" id="customer_gender" name="customer_gender" value="@Model.customer_gender" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="customer_country">Country</label>
+                    <input type="text" class="form-control" id="customer_country" name="customer_country" value="@Model.customer_country" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="customer_city">City</label>
+                    <input type="text" class="form-control" id="customer_city" name="customer_city" value="@Model.customer_city" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="customer_address">Address</label>
+                    <input type="text" class="form-control" id="customer_address" name="customer_address" value="@Model.customer_address" />
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="customer_image">Customer Image</label>
+                    <input type="file" class="form-control" id="customer_image" name="customer_image" />
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" value="Update Customer" class="btn btn-primary px-5">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
