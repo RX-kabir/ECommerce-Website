@@ -8,244 +8,328 @@ namespace E_Commerce_Website.Controllers
     {
         private myContext _context;
         private IWebHostEnvironment _env;
-        public CustomerController(myContext context,IWebHostEnvironment env) {
+
+        public CustomerController(myContext context, IWebHostEnvironment env)
+        {
             _context = context;
             _env = env;
         }
+
         public IActionResult Index()
         {
-            List<Category> category=_context.tbl_category.ToList();
-            ViewData["category"] = category;
-
-            List<Product> products = _context.tbl_product.ToList();
-            ViewData["product"] = products;
-
-            ViewBag.checkSession = HttpContext.Session.GetString("customerSession");
-            return View();
+            try
+            {
+                ViewData["category"] = _context.tbl_category.ToList();
+                ViewData["product"] = _context.tbl_product.ToList();
+                ViewBag.checkSession = HttpContext.Session.GetString("customerSession");
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = "An error occurred while loading homepage: " + ex.Message;
+                return View("Error");
+            }
         }
 
-        public IActionResult customerLogin() {
-            return View();
-
-        }
+        public IActionResult customerLogin() => View();
 
         [HttpPost]
-
-        public IActionResult customerLogin(String customerEmail,String customerPassword)
+        public IActionResult customerLogin(string customerEmail, string customerPassword)
         {
-            var customer = _context.tbl_customer.FirstOrDefault(c => c.customer_email == customerEmail);
-            if (customer != null && customer.customer_password == customerPassword)
+            try
             {
-                HttpContext.Session.SetString("customerSession", customer.customer_id.ToString());
-                return RedirectToAction("Index");
-            }
-            else
-            {
+                var customer = _context.tbl_customer.FirstOrDefault(c => c.customer_email == customerEmail);
+                if (customer != null && customer.customer_password == customerPassword)
+                {
+                    HttpContext.Session.SetString("customerSession", customer.customer_id.ToString());
+                    return RedirectToAction("Index");
+                }
+
                 ViewBag.message = "Incorrect Username or Password";
                 return View();
             }
-
+            catch (Exception ex)
+            {
+                ViewBag.message = "Login failed: " + ex.Message;
+                return View();
+            }
         }
 
-        public IActionResult CustomerRegistration()
-        {
-            return View();
-
-        }
+        public IActionResult CustomerRegistration() => View();
 
         [HttpPost]
-
         public IActionResult CustomerRegistration(Customer customer)
         {
-            _context.tbl_customer.Add(customer);
-            _context.SaveChanges();
-            return RedirectToAction("customerLogin");
+            try
+            {
+                _context.tbl_customer.Add(customer);
+                _context.SaveChanges();
+                return RedirectToAction("customerLogin");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Registration failed: " + ex.Message;
+                return View();
+            }
         }
 
         public IActionResult customerLogout()
         {
-            HttpContext.Session.Remove("customerSession");
+            try
+            {
+                HttpContext.Session.Remove("customerSession");
+            }
+            catch { }
             return RedirectToAction("Index");
         }
 
         public IActionResult customerProfile()
         {
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString("customerSession")))
+            try
             {
-                return RedirectToAction("customerLogin");
-            }
+                if (string.IsNullOrEmpty(HttpContext.Session.GetString("customerSession")))
+                    return RedirectToAction("customerLogin");
 
-            else
-            {
-                List<Category> category = _context.tbl_category.ToList();
-                ViewData["category"] = category;
-                var customerId = HttpContext.Session.GetString("customerSession");
-                var row = _context.tbl_customer.Where(c => c.customer_id == int.Parse(customerId)).ToList();
+                ViewData["category"] = _context.tbl_category.ToList();
+                int customerId = int.Parse(HttpContext.Session.GetString("customerSession"));
+                var row = _context.tbl_customer.Where(c => c.customer_id == customerId).ToList();
                 return View(row);
-
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Profile loading error: " + ex.Message;
+                return View("Error");
             }
         }
+
         public IActionResult updateCustomerProfile(Customer customer)
         {
-            _context.tbl_customer.Update(customer);
-            _context.SaveChanges();
-            return RedirectToAction("customerProfile");
+            try
+            {
+                _context.tbl_customer.Update(customer);
+                _context.SaveChanges();
+                return RedirectToAction("customerProfile");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Update failed: " + ex.Message;
+                return View("Error");
+            }
         }
 
-        public IActionResult changeProfileImage(Customer customer,IFormFile customer_image)
+        public IActionResult changeProfileImage(Customer customer, IFormFile customer_image)
         {
-            if (customer_image == null || string.IsNullOrEmpty(customer_image.FileName))
+            try
             {
-                return RedirectToAction("Profile");
-            }
+                if (customer_image == null || string.IsNullOrEmpty(customer_image.FileName))
+                    return RedirectToAction("customerProfile");
 
-            // Save image to wwwroot/admin_image
-            string ImagePath = Path.Combine(_env.WebRootPath, "customer_images", customer_image.FileName);
-            using (FileStream fs = new FileStream(ImagePath, FileMode.Create))
-            {
-                customer_image.CopyTo(fs);
-            }
+                string ImagePath = Path.Combine(_env.WebRootPath, "customer_images", customer_image.FileName);
+                using (FileStream fs = new FileStream(ImagePath, FileMode.Create))
+                {
+                    customer_image.CopyTo(fs);
+                }
 
-            // Get existing admin from DB
-            var existingCustomer = _context.tbl_customer.FirstOrDefault(c => c.customer_id == customer.customer_id);
-            if (existingCustomer != null)
-            {
-                existingCustomer.customer_image = customer_image.FileName;
-                _context.SaveChanges();
+                var existingCustomer = _context.tbl_customer.FirstOrDefault(c => c.customer_id == customer.customer_id);
+                if (existingCustomer != null)
+                {
+                    existingCustomer.customer_image = customer_image.FileName;
+                    _context.SaveChanges();
+                }
+
+                return RedirectToAction("customerProfile");
             }
-            return RedirectToAction("customerProfile");
+            catch (Exception ex)
+            {
+                ViewBag.message = "Image update failed: " + ex.Message;
+                return View("Error");
+            }
         }
 
         public IActionResult feedback()
         {
-            List<Category> category = _context.tbl_category.ToList();
-            ViewData["category"] = category;
-            return View();
+            try
+            {
+                ViewData["category"] = _context.tbl_category.ToList();
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Error loading feedback page: " + ex.Message;
+                return View("Error");
+            }
         }
 
         [HttpPost]
-
         public IActionResult feedback(Feedback feedback)
         {
-            TempData["message"] = "Thank You For Your Feedback";
-            _context.tbl_feedback.Add(feedback);
-            _context.SaveChanges();
-            return RedirectToAction("feedback");
+            try
+            {
+                _context.tbl_feedback.Add(feedback);
+                _context.SaveChanges();
+                TempData["message"] = "Thank You For Your Feedback";
+                return RedirectToAction("feedback");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Feedback submission failed: " + ex.Message;
+                return View("Error");
+            }
         }
 
         public IActionResult fetchAllProducts()
         {
-            List<Category> category = _context.tbl_category.ToList();
-            ViewData["category"] = category;
-
-            List<Product> products = _context.tbl_product.ToList();
-            ViewData["product"] = products;
-            return View();
+            try
+            {
+                ViewData["category"] = _context.tbl_category.ToList();
+                ViewData["product"] = _context.tbl_product.ToList();
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Could not fetch products: " + ex.Message;
+                return View("Error");
+            }
         }
-
 
         public IActionResult productDetails(int id)
         {
-            List<Category> category = _context.tbl_category.ToList();
-            ViewData["category"] = category;
-
-            var products = _context.tbl_product.Where(p=>p.product_id == id).ToList();
-
-            return View(products);
+            try
+            {
+                ViewData["category"] = _context.tbl_category.ToList();
+                var products = _context.tbl_product.Where(p => p.product_id == id).ToList();
+                return View(products);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Product details load failed: " + ex.Message;
+                return View("Error");
+            }
         }
 
-        public IActionResult AddToCart(int prod_id,Cart cart)
+        public IActionResult AddToCart(int prod_id, Cart cart)
         {
-            string isLogin=HttpContext.Session.GetString("customerSession");
-            if (isLogin != null)
+            try
             {
-                cart.product_id = prod_id;
-                cart.cust_id = int.Parse(isLogin);
-                cart.product_quantity = 1;
-                cart.cart_status = 0;
-                _context.tbl_cart.Add(cart);
-                _context.SaveChanges();
-                TempData["message"] = "Product Successfully added in Cart";
-                return RedirectToAction("fetchAllProducts");
+                string isLogin = HttpContext.Session.GetString("customerSession");
+                if (isLogin != null)
+                {
+                    cart.product_id = prod_id;
+                    cart.cust_id = int.Parse(isLogin);
+                    cart.product_quantity = 1;
+                    cart.cart_status = 0;
 
+                    _context.tbl_cart.Add(cart);
+                    _context.SaveChanges();
+
+                    TempData["message"] = "Product Successfully added in Cart";
+                    return RedirectToAction("fetchAllProducts");
+                }
+                else
+                {
+                    return RedirectToAction("customerLogin");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return RedirectToAction("customerLogin");
-
-
+                ViewBag.message = "Add to cart failed: " + ex.Message;
+                return View("Error");
             }
-
         }
 
         public IActionResult fetchCart()
         {
-            List<Category> category = _context.tbl_category.ToList();
-            ViewData["category"] = category;
+            try
+            {
+                ViewData["category"] = _context.tbl_category.ToList();
+                string customerId = HttpContext.Session.GetString("customerSession");
 
-            string customerId = HttpContext.Session.GetString("customerSession");
-            if (customerId != null)
-            {
-                var cart = _context.tbl_cart.Where(c => c.cust_id == int.Parse(customerId)).Include(c => c.products).ToList();
-                return View(cart);
-            }
-            else
-            {
+                if (customerId != null)
+                {
+                    var cart = _context.tbl_cart
+                        .Where(c => c.cust_id == int.Parse(customerId))
+                        .Include(c => c.products)
+                        .ToList();
+                    return View(cart);
+                }
                 return RedirectToAction("customerLogin");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Cart loading failed: " + ex.Message;
+                return View("Error");
             }
         }
 
         public IActionResult removeProduct(int id)
         {
-           var product =  _context.tbl_cart.Find(id);
-            _context.tbl_cart.Remove(product);
-            _context.SaveChanges();
-            return RedirectToAction("fetchcart");
+            try
+            {
+                var product = _context.tbl_cart.Find(id);
+                if (product != null)
+                {
+                    _context.tbl_cart.Remove(product);
+                    _context.SaveChanges();
+                }
+                return RedirectToAction("fetchCart");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Product removal failed: " + ex.Message;
+                return View("Error");
+            }
         }
-
 
         public IActionResult CheckOutAll()
         {
-            List<Category> category = _context.tbl_category.ToList();
-            ViewData["category"] = category;
-            string customerId = HttpContext.Session.GetString("customerSession");
-            if (customerId == null)
-                return RedirectToAction("customerLogin");
-
-            int custId = int.Parse(customerId);
-
-            var cartItems = _context.tbl_cart
-                            .Include(c => c.products)
-                            .Where(c => c.cust_id == custId)
-                            .ToList();
-
-            if (!cartItems.Any())
-                return RedirectToAction("fetchCart");
-
-            var totalPrice = cartItems.Sum(c => decimal.Parse(c.products.product_price) * c.product_quantity);
-
-            var order = new Order
+            try
             {
-                cust_id = custId,
-                total_price = totalPrice,
-                order_date = DateTime.Now
-            };
+                ViewData["category"] = _context.tbl_category.ToList();
+                string customerId = HttpContext.Session.GetString("customerSession");
 
-            _context.Orders.Add(order);
-            _context.tbl_cart.RemoveRange(cartItems);
-            _context.SaveChanges();
+                if (customerId == null)
+                    return RedirectToAction("customerLogin");
 
-            return View(order);
+                int custId = int.Parse(customerId);
+                var cartItems = _context.tbl_cart.Include(c => c.products).Where(c => c.cust_id == custId).ToList();
+
+                if (!cartItems.Any())
+                    return RedirectToAction("fetchCart");
+
+                var totalPrice = cartItems.Sum(c => decimal.Parse(c.products.product_price) * c.product_quantity);
+
+                var order = new Order
+                {
+                    cust_id = custId,
+                    total_price = totalPrice,
+                    order_date = DateTime.Now
+                };
+
+                _context.Orders.Add(order);
+                _context.tbl_cart.RemoveRange(cartItems);
+                _context.SaveChanges();
+
+                return View(order);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Checkout failed: " + ex.Message;
+                return View("Error");
+            }
         }
-
 
         public IActionResult OrderSuccess()
         {
-            List<Category> category = _context.tbl_category.ToList();
-            ViewData["category"] = category;
-            return View();
+            try
+            {
+                ViewData["category"] = _context.tbl_category.ToList();
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.message = "Error loading order success page: " + ex.Message;
+                return View("Error");
+            }
         }
-
     }
 }
-
